@@ -1,0 +1,99 @@
+/* Basic Reset and Root Styling */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #f8f9fa; /* Light Gray */
+    --text-color: #212529; /* Dark Gray */
+    --bg-color: #ffffff; /* White */
+    --sidebar-width: 250px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* App Layout Container (Flexbox) */
+#app-container {
+    display: flex;
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+}
+
+/* Sidebar Styling */
+#sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    padding: 20px 0;
+    flex-shrink: 0; /* Prevents sidebar from shrinking */
+}
+
+#sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+/* Navigation Links */
+.nav-section {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-section li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 1.1em;
+    border-left: 5px solid transparent;
+}
+
+.nav-section li a:hover {
+    background-color: #3e444a; /* Darker background on hover */
+}
+
+.nav-section li a.active {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-left: 5px solid #0056b3; /* Darker primary color border */
+    font-weight: bold;
+}
+
+/* Main Content Styling */
+#content-area {
+    flex-grow: 1; /* Allows content area to take up remaining space */
+    padding: 30px;
+    overflow-y: auto; /* Allows scrolling if content is long */
+}
+
+#content-area h1 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#content-area h3 {
+    margin-top: 25px;
+    color: #495057;
+}
+
+.level-section {
+    border-left: 3px solid #ccc;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.level-section p {
+    line-height: 1.6;
+}
