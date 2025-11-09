@@ -294,6 +294,8 @@ const methodologiesData = {
 // Get references to DOM elements
 const sidebar = document.getElementById('sidebar');
 const contentArea = document.getElementById('content-area');
+// Get reference for the menu toggle button
+const menuToggle = document.getElementById('menuToggle');
 
 // Variable to track the currently active link for styling
 let activeLink = null;
@@ -380,5 +382,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstLink = document.querySelector(`[data-methodology="${firstMethodology}"]`);
     if (firstMethodology && firstLink) {
         loadContent(firstMethodology, firstLink);
+    }
+    // NEW LINE: Toggle the sidebar when the menu button is clicked
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('show-sidebar');
+        });
     }
 });
